@@ -105,7 +105,7 @@
     wavelet_row = 0
     
     
-    do while(1)   !È·ÈÏÎÄ¼þÖÐÊý¾ÝÄÚÈÝÐÐÊý
+    do while(1)   !È·ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         read(unit = 100,fmt = 101, iostat = var) string
         if (var < 0) then
             exit
@@ -117,7 +117,7 @@
     
     close(100)      
     
-    !¼ÆËã¾ØÕóCµÄ³¤¶È
+    !ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½Ä³ï¿½ï¿½ï¿½
     row_ = data_row
     col_ = data_col
     
@@ -128,7 +128,7 @@
     end do
     sum = sum + floor((row_+wavelet_row-1)/2.0) * floor((col_+wavelet_row-1)/2.0) * 4
      
-    !¶¯Ì¬¾ØÕó³õÊ¼»¯
+    !ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
     allocate(c(sum))
     allocate(s(n+2,2))
     allocate(a(data_row,data_col))
