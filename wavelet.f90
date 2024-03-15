@@ -200,7 +200,7 @@
         
         
     end do 
-    deallocate(c,s,a,h,v,d)
+    !deallocate(c,s,a,h,v,d)
 200 format(f12.6 x f12.6 x f12.6) 
 101 format(A100)    
     
