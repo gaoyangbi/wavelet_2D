@@ -1,4 +1,5 @@
     subroutine convdown(out_,z,F,size_EXT,first,last,out_size_1,out_size_2,zsize_1,zsize_2,Fsize_)
+    !   进行卷积解码的计算
     ! Variables
     integer*4 size_EXT,linshi_size1,linshi_size2
     integer*4 out_size_1,out_size_2,zsize_1,zsize_2,Fsize_

@@ -1,4 +1,6 @@
     subroutine wrcoef2(type_,x,c,s,method,degree,xsize_1,xsize_2,c_size,s_size,wavelet_row)
+    ! 针对某一个小波分量 a,h,v,d 进行小波重构 
+
     ! Variables
     integer*4 degree,c_size,s_size,xsize_1,xsize_2
     integer*4 rmax,nmax,nmin,wavelet_row,imin
@@ -22,7 +24,7 @@
         nmin = 1
     end if
     
-!--------------------------------    
+!-----------------------------------------------读取小波基数据文件    
     wave_filename = trim(method)//'.txt'
     
     open(unit = 100, file = wave_filename , status='old', position='rewind')
@@ -38,7 +40,7 @@
     end do     
     
     close(100)
-!---------------------------------------    
+!--------------------------------------------------------重构该阶的小波分解成分    
     allocate(linshi_matrix1(s(s_size-degree,1),s(s_size-degree,2)))
     allocate(h(s(s_size-degree,1),s(s_size-degree,2)))
     allocate(v(s(s_size-degree,1),s(s_size-degree,2)))

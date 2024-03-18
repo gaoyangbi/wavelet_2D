@@ -1,5 +1,6 @@
     subroutine appcoef2(out_matrix,c,s,Lo_R,Hi_R,matrix_size1,matrix_size2,c_size,s_size,wavelet_row,degree)
     ! Variables
+    !  针对趋势分量a 进行重构
     integer*4 matrix_size1,matrix_size2,c_size,s_size,wavelet_row,degree
     real*8 out_matrix(matrix_size1,matrix_size2),c(c_size)
     integer*4 s(s_size,2)

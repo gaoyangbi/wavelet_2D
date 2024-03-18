@@ -1,4 +1,5 @@
     subroutine dwt2(x0,x,h,v,d,c,s,method,sum,row_,col_,n,i,c_end,wavelet_row)
+    !  针对单次的小波递进分解计算
     ! Variables
     implicit none
     integer*4 n,sum,row_,col_,c_end,wavelet_row,j,i
@@ -13,12 +14,12 @@
     real*8 d(floor((row_+wavelet_row-1)/2.0),floor((col_+wavelet_row-1)/2.0))
     real*8 c(sum)
     integer*4 s(n+2,2)
-    real*8 ,allocatable::Lo_D(:),Hi_D(:),Lo_R(:),Hi_R(:)
+    real*8 ,allocatable::Lo_D(:),Hi_D(:),Lo_R(:),Hi_R(:)                           !  小波基函数 四分量
     real*8 ,allocatable::y(:,:),conv_core(:,:)
     real*8 ,allocatable::z(:,:)
     
     
-    ! Body of dwt2
+!***********************************************************读取小波基函数
     wave_filename = trim(method)//'.txt'
     
     open(unit = 100, file = wave_filename , status='old', position='rewind')
@@ -41,6 +42,7 @@
     last(1) = size(x0,1) + wavelet_row - 1
     last(2) = size(x0,2) + wavelet_row - 1
     
+!*******************************************************对输入数据进行矩阵扩展
     allocate(y(row_ , col_ + 2 * size_EXT))    
     y = 0    
     mode_tend = 'addcol'

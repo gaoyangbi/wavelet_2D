@@ -1,4 +1,5 @@
     subroutine wextend(mode,y,x0,ysize_1,ysize_2,size_EXT,row_x0,col_x0)
+    !   对输入数据矩阵进行反向扩充
     ! Variables
     implicit none
     integer*4 row_x0,col_x0,ysize_1,ysize_2
@@ -10,6 +11,8 @@
     
     ! Body of wextend
     
+
+!***************************************************行数不变，扩充列数。
     if (trim(mode) == 'addcol') then
         y(:,size_EXT+1:size_EXT+col_x0) = x0
     
@@ -22,7 +25,7 @@
             y(:,size_EXT+1-j) = x0(:,j)
             y(:,size_EXT+col_x0+j) = x0(:,col_x0+1-j)
         end do
-        
+!****************************************************列数不变，扩充行数。   
     else if (trim(mode) == 'addrow') then
         y(size_EXT+1:size_EXT+row_x0,:) = x0
         
@@ -37,12 +40,6 @@
         end do
 
     end if
-    
-    
-    
-    
-
-    
     
 10  format(A2 I2.2 x A14)    
 

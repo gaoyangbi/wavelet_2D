@@ -1,18 +1,17 @@
     subroutine wavedec2(c,s,data_ceshi,n,method,data_row,data_col,sum,wavelet_row)
+    ! 进行小波分解
+
     ! Variables
     implicit none
-    integer*4 data_row,data_col
-    integer*4 n,sum,row_,col_,wavelet_row
-    integer*4 i,c_end,var
-    real*8 data_ceshi(data_row,data_col)
-    real*8 c(sum)
-    integer*4 s(n+2,2)
-    character*100 method
+    integer*4 data_row,data_col                 !   data_row 数据行数  data_col  数据列数
+    integer*4 n,sum,row_,col_,wavelet_row       !   n 滤波阶数  sum,row_,col_ 中间变量   wavelet_row  小波数据行数
+    integer*4 i,c_end,var                       !
+    real*8 data_ceshi(data_row,data_col)        !   data_ceshi  输入数据
+    real*8 c(sum)                               !
+    integer*4 s(n+2,2)                          !
+    character*100 method                        !   小波方法
     
     real*8 ,allocatable::x0(:,:),x(:,:),h(:,:),v(:,:),d(:,:)
-    
-    
-    
 
 
     row_ = data_row
@@ -21,7 +20,7 @@
     s(n+2,1) = row_
     s(n+2,2) = col_
     
-    ! Body of wavedec2
+!********************************************************循环n次，进行小波分解的递进计算
     do i = 1,n
         
         
