@@ -1,5 +1,5 @@
     subroutine detcoef2(h,v,d,c,s,hvd_size1,hvd_size2,c_size,s_size,degree)
-    ! Variables
+    ! Variables 输入变量名
     ! 'l' = 'all' 
     !  针对细节分量 hvd 进行重构
     integer*4 hvd_size1,hvd_size2,c_size,s_size,degree
