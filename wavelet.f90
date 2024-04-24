@@ -117,7 +117,7 @@
     open(unit = 100, file = wave_filename , status='old', position='rewind')
     wavelet_row = 0    
     
-    do while(1)   
+    do while(.true.)   
         read(unit = 100,fmt = 101, iostat = var) string
         if (var < 0) then
             exit
