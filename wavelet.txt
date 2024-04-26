@@ -1,5 +1,5 @@
 gridding_out.txt,gridding_out.txt
-G:\wavelet_program\VS\wavelet\wavelet\result\
+result/
 16
 16
 db2
